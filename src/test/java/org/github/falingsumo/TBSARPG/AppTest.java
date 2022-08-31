@@ -1,4 +1,4 @@
-package org.example;
+package org.github.falingsumo.TBSARPG;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
