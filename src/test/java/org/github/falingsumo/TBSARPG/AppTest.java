@@ -1,17 +1,21 @@
 package org.github.falingsumo.TBSARPG;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Before;
+import org.junit.Test;
 
-public class AppTest extends TestCase {
-    public AppTest(String testName) {
-        super(testName);
+import static org.junit.Assert.assertTrue;
+
+public class AppTest {
+
+    private App app;
+
+    @Before
+    public void setup() {
+        this.app = new App();
     }
-    public static Test suite() {
-        return new TestSuite(AppTest.class);
-    }
-    public void testApp() {
+
+    @Test
+    public void given_when_then() {
         assertTrue(true);
     }
 }
