@@ -7,6 +7,6 @@ public class App {
     public static void main(String[] args) {
         GraphicEngine graphicEngine = new ConsoleGraphicEngine();
         GameEngine gameEngine = new GameEngine(graphicEngine);
-        System.out.println("Hello World!");
+        gameEngine.start();
     }
 }

@@ -7,4 +7,8 @@ public class GameEngine {
     public GameEngine(GraphicEngine graphicEngine) {
         this.graphicEngine = graphicEngine;
     }
+
+    public void start() {
+        this.graphicEngine.write("Hello world!");
+    }
 }
