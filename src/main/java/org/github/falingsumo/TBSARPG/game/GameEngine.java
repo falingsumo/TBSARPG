@@ -9,6 +9,6 @@ public class GameEngine {
     }
 
     public void start() {
-        this.graphicEngine.write("Hello world!");
+        this.graphicEngine.writeLine("Hello world!");
     }
 }
