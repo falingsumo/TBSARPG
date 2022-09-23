@@ -35,12 +35,12 @@ public class GameEngineTest {
     @Test
     public void givenAnInputMethod_whenStartingAGame_thenTheInputMethodShouldReadALine() {
         this.gameEngine.start();
-        verify(this.inputMethod, times(1)).readLine();
+        verify(this.inputMethod, times(1)).read();
     }
 
     @Test
     public void givenAnInputString_whenStartingAGame_thenTheGraphicEngineShouldWriteTheInputString() {
-        when(this.inputMethod.readLine()).thenReturn(AN_INPUT_STRING);
+        when(this.inputMethod.read()).thenReturn(AN_INPUT_STRING);
         this.gameEngine.start();
         verify(this.graphicEngine, times(1)).writeLine(AN_INPUT_STRING);
     }

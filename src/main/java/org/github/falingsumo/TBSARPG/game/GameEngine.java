@@ -14,7 +14,7 @@ public class GameEngine {
 
     public void start() {
         this.graphicEngine.writeLine("Hello world!");
-        String test = this.inputMethod.readLine();
+        String test = this.inputMethod.read();
         this.graphicEngine.writeLine(test);
     }
 }
