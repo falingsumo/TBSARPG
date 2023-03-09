@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         GraphicEngine graphicEngine = new Console();
-        InputMethod inputMethod = new Keyboard(new Scanner(System.in));
+        InputMethod inputMethod = new Keyboard(System.in);
         GameEngine gameEngine = new GameEngine(graphicEngine, inputMethod);
         gameEngine.start();
     }
