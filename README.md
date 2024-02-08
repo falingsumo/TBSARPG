@@ -30,9 +30,9 @@ eclipse-temurin:21
 ```
 * To build the docker image use:
 ```cmd 
-docker build -t something/somethingelse .
+docker build -t TBSARPG/server .
 ```
 * To run the docker image use:
 ```cmd 
-docker run -p 8080:8080 -t something/somethingelse
+docker run -p 8080:8080 -t TBSARPG/server
 ```
