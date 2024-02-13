@@ -7,11 +7,11 @@ Here is a list of specifications related to Java for this project:
 * The project uses a maven wrapper
 * To clean and install the project use:
 ```cmd
-./mvnw clean install
+./maven-wrapper/mvnw clean install
 ```
 * To build and package the application use:
 ```cmd
-./mvnw package
+./maven-wrapper/mvnw package
 ```
 * To run the project use:
 ```cmd 
