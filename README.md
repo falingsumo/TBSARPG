@@ -15,7 +15,7 @@ Here is a list of specifications related to Java for this project:
 ```
 * To run the project use:
 ```cmd 
-java -jar target/lab-sebastien-0.0.1-SNAPSHOT.jar
+java -jar target/game-server-0.0.1-SNAPSHOT.jar
 ```
 
 ### Docker details:
