@@ -3,7 +3,7 @@
 ### Java details:
 Here is a list of specifications related to Java for this project:
 * The project was initialized using https://start.spring.io
-* OpenJDK 21
+* OpenJDK 17
 * The project uses a maven wrapper
 * To clean and install the project use:
 ```cmd
@@ -22,7 +22,7 @@ java -jar target/lab-sebastien-0.0.1-SNAPSHOT.jar
 Here is a list of specifications related to Docker for this project:
 * The base image is
 ```cmd 
-eclipse-temurin:21
+eclipse-temurin:17
 ```
 * The working directory is
 ```cmd 

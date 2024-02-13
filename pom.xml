@@ -14,7 +14,7 @@
     <name>game-server</name>
     <description>Game server for a turn base strategy action role playing game.</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>

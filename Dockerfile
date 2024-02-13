@@ -1,5 +1,5 @@
 # Setting base docker image
-FROM eclipse-temurin:21 as builder
+FROM eclipse-temurin:17 as builder
 # Setting workplace directory
 WORKDIR /opt/dev
 
