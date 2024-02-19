@@ -8,11 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("health-check")
+@RequestMapping("health-check/v1")
 public class HealthCheckController {
 
+    private final HealthCheckService healthCheckService;
+
+    public HealthCheckController(HealthCheckService healthCheckService) {
+        this.healthCheckService = healthCheckService;
+    }
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> healthCheck() {
-        return new ResponseEntity<>("testing health-check", HttpStatus.OK);
+    public ResponseEntity<HealthCheckResponse> healthCheck() {
+        return new ResponseEntity<>(this.healthCheckService.healthCheck(), HttpStatus.OK);
     }
 }
