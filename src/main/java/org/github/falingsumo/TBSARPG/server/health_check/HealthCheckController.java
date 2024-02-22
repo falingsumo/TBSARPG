@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
 
@@ -21,7 +22,7 @@ public class HealthCheckController {
             final Properties properties = new Properties();
             properties.load(HealthCheckController.class.getClassLoader().getResourceAsStream("application.properties"));
             return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), properties.getProperty("application.version")), HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error");
         }
     }
