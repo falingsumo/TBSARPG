@@ -7,18 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("health-check/v1")
 public class HealthCheckController {
-
-    private final HealthCheckService healthCheckService;
-
-    public HealthCheckController(HealthCheckService healthCheckService) {
-        this.healthCheckService = healthCheckService;
-    }
-
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HealthCheckResponse> healthCheck() {
-        return new ResponseEntity<>(this.healthCheckService.healthCheck(), HttpStatus.OK);
+    public ResponseEntity<HealthCheckResponseDTO> healthCheck() {
+        return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), "0.0.1-SNAPSHOT"), HttpStatus.OK);
     }
 }
