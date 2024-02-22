@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-@RequestMapping("health-check/v1")
+@RequestMapping("health-check/" + HealthCheckController.version)
 public class HealthCheckController {
+    public static final String version = "v1";
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HealthCheckResponseDTO> healthCheck() {
         return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), "0.0.1-SNAPSHOT"), HttpStatus.OK);
