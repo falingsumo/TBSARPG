@@ -8,14 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.Properties;
 
 @RestController
-@RequestMapping("health-check/" + HealthCheckController.version)
+@RequestMapping("health-check/" + HealthCheckController.APIVersion)
 public class HealthCheckController {
-    public static final String version = "v1";
+    public static final String APIVersion = "v1";
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HealthCheckResponseDTO> healthCheck() {
-        return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), "0.0.1-SNAPSHOT"), HttpStatus.OK);
+    public ResponseEntity<Object> healthCheck() {
+        try {
+            final Properties properties = new Properties();
+            properties.load(HealthCheckController.class.getClassLoader().getResourceAsStream("application.properties"));
+            return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), properties.getProperty("application.version")), HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error");
+        }
     }
 }
