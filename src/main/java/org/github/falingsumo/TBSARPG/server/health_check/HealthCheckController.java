@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 @RestController
 @RequestMapping("health-check/" + HealthCheckController.APIVersion)
@@ -22,9 +25,12 @@ public class HealthCheckController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> healthCheck() {
+    public ResponseEntity<Object> healthCheck(Locale locale) {
+        //ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
+        //bundle.getString("general.date.format")
+        //System.out.println(locale.getLanguage());
         try {
-            return new ResponseEntity<>(new HealthCheckResponseDTO(new Date(), this.buildVersionService.getBuildVersion()), HttpStatus.OK);
+            return new ResponseEntity<>(new HealthCheckResponseDTO(Instant.now(), this.buildVersionService.getBuildVersion(), locale), HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
