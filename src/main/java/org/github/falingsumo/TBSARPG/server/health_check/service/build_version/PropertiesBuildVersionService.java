@@ -1,6 +1,8 @@
-package org.github.falingsumo.TBSARPG.server.health_check.service;
+package org.github.falingsumo.TBSARPG.server.health_check.service.build_version;
 
 import org.github.falingsumo.TBSARPG.server.health_check.HealthCheckController;
+import org.github.falingsumo.TBSARPG.server.health_check.service.BuildVersionService;
+import org.github.falingsumo.TBSARPG.server.health_check.service.build_version.BuildVersionUnavailableException;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
