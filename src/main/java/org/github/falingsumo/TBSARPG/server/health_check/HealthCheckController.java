@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
-import java.util.Date;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 @RestController
 @RequestMapping("health-check/" + HealthCheckController.APIVersion)

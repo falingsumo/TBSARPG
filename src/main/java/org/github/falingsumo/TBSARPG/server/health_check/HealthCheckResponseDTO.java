@@ -1,6 +1,5 @@
 package org.github.falingsumo.TBSARPG.server.health_check;
 
-import java.time.Instant;
 import java.util.Locale;
 
 public class HealthCheckResponseDTO {
