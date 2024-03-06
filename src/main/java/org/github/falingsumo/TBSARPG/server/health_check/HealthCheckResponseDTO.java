@@ -1,13 +1,16 @@
 package org.github.falingsumo.TBSARPG.server.health_check;
 
-import java.util.Date;
+import java.util.Locale;
 
 public class HealthCheckResponseDTO {
-    public Date currentDate;
+    public String currentInstant;
     public String buildVersion;
 
-    public HealthCheckResponseDTO(Date currentDate, String buildVersion) {
-        this.currentDate = currentDate;
+    public Locale locale;
+
+    public HealthCheckResponseDTO(String currentInstant, String buildVersion, Locale locale) {
+        this.currentInstant = currentInstant;
         this.buildVersion = buildVersion;
+        this.locale = locale;
     }
 }
