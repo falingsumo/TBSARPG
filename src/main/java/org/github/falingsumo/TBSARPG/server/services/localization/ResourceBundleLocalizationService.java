@@ -41,4 +41,10 @@ public class ResourceBundleLocalizationService implements LocalizationService {
         ResourceBundle bundle = ResourceBundle.getBundle(BUNDLE_NAME, locale);
         return bundle.getString(key);
     }
+
+    @Override
+    public String translate(String key, Locale locale, Object... args) {
+        String message = this.translate(key, locale);
+        return String.format(message, args);
+    }
 }

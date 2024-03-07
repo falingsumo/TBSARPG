@@ -6,4 +6,5 @@ import java.util.Locale;
 public interface LocalizationService {
     String format(Instant instant, Locale locale);
     String translate(String key, Locale locale);
+    String translate(String key, Locale locale, Object... args);
 }
